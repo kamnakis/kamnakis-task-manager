@@ -1,20 +1,24 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Switch } from 'react-router-dom'
+
+import PublicRoute from './PublicRoute'
+import ProtectedRoute from './ProtectedRoute'
 
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
+import Dashboard from './Dashboard'
 import NotFound from './NotFound'
 
 const TaskManager = () => {
   return (
     <HashRouter basename="/">
-      <h1 className="text-red-500">Task Manager</h1>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact component={NotFound} />
+        <PublicRoute exact path='/' component={Home}  />
+        <PublicRoute exact path="/login" component={Login} />
+        <PublicRoute exact path='/signup' component={Signup} />
+        <ProtectedRoute exact path='/dashboard' component={Dashboard} />
+        <PublicRoute exact component={NotFound} />
       </Switch>
     </HashRouter>
   );

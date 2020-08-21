@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 import './styles/tailwind.output.css'
+import './styles/index.css'
 import TaskManager from './components/TaskManager'
 
 ReactDOM.render(<TaskManager />, document.getElementById('root'))
