@@ -52,7 +52,7 @@ const SignupForm = (props) => {
 
   return (
     <>
-      <form className="flex flex-col" onSubmit={handleFormSubmit}>
+      <form className="w-full flex flex-col" onSubmit={handleFormSubmit}>
         <input
           className="shadow-md text-lg py-2 px-2 rounded-lg focus:outline-none my-2"
           placeholder="first name"
