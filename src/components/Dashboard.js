@@ -1,25 +1,62 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { api_url, headers } from '../utils/api_settings'
+import React, { useEffect, useReducer, useState } from 'react'
+import { useAlert } from 'react-alert'
+
+import api from '../utils/api'
+import tasks_reducer from '../reducers/tasks'
+import profile_reducer from '../reducers/profile'
+import Context from '../context/Context'
+
 import Toolbar from './Toolbar'
 import TaskSection from './TaskSection'
+import Loading from './Loading'
 
-const Dashboard = (props) => {
-  const [profile, setProfile] = useState({name: '', email: '', age: 0})
+const Dashboard = ({ history }) => {
+  const alert = useAlert()
+  const [tasks, dispatch] = useReducer(tasks_reducer, [])
+  const [profile, dispatchProfile] = useReducer(profile_reducer, { name: '', email: '', age: 0, })
+
+  const [isLoading, setIsLoading] = useState(false)
+
+  const getData = async () => {
+    setIsLoading(true)
+
+    try {
+      const data = await api.GET_TASKS('sortBy=createdAt_desc')
+      dispatch({ type: 'INITIALIZE', data })
+      setIsLoading(false)
+    } catch (error) {
+      alert.show('Something went wrong!')
+      setIsLoading(false)
+    }
+  }
+
+  const getProfile = async () => {
+    setIsLoading(true)
+
+    try {
+      const profile = await api.GET_PROFILE()
+      dispatchProfile({ type: 'INITIALIZE', profile })
+      getData()
+    } catch (error) {
+      alert.show('Something went wrong!')
+      setIsLoading(false)
+    }
+  }
 
   useEffect(() => {
-    axios.get(`${api_url}/users/me`, { headers: headers(localStorage.getItem('taskManagerToken')) }).then((res) => {
-      setProfile(res.data)
-    })
+    getProfile()
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Toolbar profile={profile} history={props.history} />
-      <div className="min-h-auto bg-gradient-to-b from-yellow-500 to-gray-500 flex-grow flex justify-center items-center">
-        <TaskSection />
+    <Context.Provider value={{ tasks, dispatch, profile, dispatchProfile, history }}>
+      <Loading isLoading={isLoading} />
+      <div className="min-h-screen flex flex-col">
+        <Toolbar profile={profile} history={history} />
+        <div className="min-h-auto bg-gradient-to-b from-yellow-500 to-yellow-600 flex-grow flex justify-center">
+          <TaskSection />
+        </div>
       </div>
-    </div>
+    </Context.Provider>
   )
 }
 

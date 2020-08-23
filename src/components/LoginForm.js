@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import axios from 'axios'
-import { api_url } from '../utils/api_settings'
+import Loading from './Loading'
+import api from '../utils/api'
+import { useAlert } from 'react-alert'
 
 const LoginForm = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const alert = useAlert()
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -14,17 +17,19 @@ const LoginForm = (props) => {
     setPassword(e.target.value)
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault()
-    axios.post(`${api_url}/users/login`, {
-      email,
-      password
-    }).then(res => {
-      localStorage.setItem('taskManagerToken', res.data.token)
+    setIsLoading(true)
+
+    try {
+      const res = await api.USER_LOGIN({ email, password })
+      localStorage.setItem('taskManagerToken', res.token)
       props.history.push('/dashboard')
-    }).catch(error => {
-      console.log(error);
-    });
+    } catch (error) {
+      alert.show('email or password is incorrect')
+      setIsLoading(false)
+    }
+
   }
 
   return (
@@ -55,6 +60,7 @@ const LoginForm = (props) => {
 
         <button className="shadow-md text-lg py-1 px-2 rounded-lg focus:outline-none bg-yellow-500 mt-4">Login</button>
       </form>
+      <Loading isLoading={isLoading} />
     </>
   )
 }
