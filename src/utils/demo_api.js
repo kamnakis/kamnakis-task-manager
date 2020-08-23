@@ -12,7 +12,7 @@ let tasks = [
   {
     _id: '5f429ee7570e9a0017f65fec',
     completed: false,
-    description: 'Task #1',
+    description: 'Make dinner',
     owner: '5f428ab3570e9a0017f65fdf',
     createdAt: '2020-08-23T17:00:17.522Z',
     updatedAt: '2020-08-23T17:00:17.522Z',
@@ -21,7 +21,7 @@ let tasks = [
   {
     _id: '5f429ee7570e9a0017f65feb',
     completed: false,
-    description: 'Task #2',
+    description: 'Fix the car',
     owner: '5f428ab3570e9a0017f65fdf',
     createdAt: '2020-08-22T17:00:17.522Z',
     updatedAt: '2020-08-22T17:00:17.522Z',
@@ -30,7 +30,7 @@ let tasks = [
   {
     _id: '5f429ee7570e9a0017f65fea',
     completed: true,
-    description: 'Task #3',
+    description: 'Buy some milk!',
     owner: '5f428ab3570e9a0017f65fdf',
     createdAt: '2020-08-21T17:00:17.522Z',
     updatedAt: '2020-08-21T17:00:17.522Z',
@@ -97,17 +97,13 @@ const REMOVE_TASK = async (id) => {
 }
 
 const UPDATE_TASK = async ({ _id, description, completed }) => {
+  await sleep(500);
   return {
-    _id: '5f429ee7570e9a0017f65fea',
-    completed: true,
-    description: 'Task #4',
-    owner: '5f428ab3570e9a0017f65fdf',
-    createdAt: '2020-08-21T17:00:17.522Z',
-    updatedAt: '2020-08-21T17:00:17.522Z',
-    __v: 0
+    _id,
+    description,
+    completed
   }
 }
-
 
 const api = {
   GET_PROFILE,
