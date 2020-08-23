@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kamnakis-task-manager/precache-manifest.8ab595626a67050949ca015b7a738677.js"
+  "/kamnakis-task-manager/precache-manifest.2f6e50b0e41d55b3509c56e5ad2cbfbc.js"
 );
 
 self.addEventListener('message', (event) => {
