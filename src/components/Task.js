@@ -86,7 +86,7 @@ const Task = ({ task }) => {
           <div className="flex items-center space-x-3">
             <FontAwesomeIcon icon={faPencilAlt}
               className="text-white text-xl cursor-pointer transition-transform transform duration-200 hover:scale-110"
-              onClick={() => setIsEditing(!isEditing)}
+              onClick={() => setIsEditing(true)}
             />
             <FontAwesomeIcon icon={faTrash}
               className="text-white text-xl cursor-pointer transition-transform transform duration-200 hover:scale-110"
