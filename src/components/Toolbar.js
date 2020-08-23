@@ -11,7 +11,7 @@ const Toolbar = ({ profile, history }) => {
       </div>
 
       <div className="flex justify-center items-center space-x-2">
-        <Dropdown label={profile.name} history={history} />
+        <Dropdown label={`${profile.name}, ${profile.age}`} history={history} />
       </div>
 
     </div>

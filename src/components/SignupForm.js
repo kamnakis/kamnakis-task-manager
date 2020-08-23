@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
-import axios from 'axios'
-import { api_url } from '../utils/api_settings'
+import api from '../utils/api'
+import Loading from './Loading'
+import { useAlert } from 'react-alert'
 
 const SignupForm = (props) => {
+  const alert = useAlert()
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [vpassword, setVpassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleFnameChange = (e) => {
     setFname(e.target.value)
@@ -29,17 +32,21 @@ const SignupForm = (props) => {
     setVpassword(e.target.value)
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
     if (password === vpassword) {
-      axios.post(`${api_url}/users`, {
-        name: `${fname} ${lname}`,
-        email,
-        password
-      }).then(res => {
-        localStorage.setItem('taskManagerToken', res.data.token)
+      try {
+        const res = await api.SIGNUP_USER({ fname, lname, email, password })
+        localStorage.setItem('taskManagerToken', res.token)
         props.history.push('/dashboard')
-      })
+      } catch (error) {
+        alert.show('email already in use')
+        setIsLoading(false)
+      }
+    } else {
+      alert.show('Passwords don\'t match')
+      setIsLoading(false)
     }
   }
 
@@ -97,6 +104,7 @@ const SignupForm = (props) => {
         </label>
         <button className="shadow-md text-lg py-1 px-2 rounded-lg focus:outline-none bg-yellow-500 mt-4">Sign Up</button>
       </form>
+      <Loading isLoading={isLoading} />
     </>
   )
 }
