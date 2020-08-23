@@ -5,7 +5,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useAlert } from 'react-alert'
 
 import Context from '../context/Context'
-import api from '../utils/api'
 
 import Loading from './Loading'
 
@@ -26,7 +25,7 @@ const customStyles = {
 Modal.setAppElement(document.getElementById('root'))
 
 const SettingsModal = ({ isOpen, onRequestClose }) => {
-  const { profile, dispatchProfile, history } = useContext(Context)
+  const { profile, dispatchProfile, history, api } = useContext(Context)
   const [isLoading, setIsLoading] = useState(false)
   const alert = useAlert()
 

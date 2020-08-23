@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import Loading from './Loading'
 import SettingsModal from './SettingsModal'
-import api from '../utils/api'
-
+import Context from '../context/Context'
 
 const Dropdown = ({ label, history }) => {
+  const { api } = useContext(Context)
   const [menuVisible, setMenuVisible] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [settingsVisible, setSettingsVisible] = useState(false)

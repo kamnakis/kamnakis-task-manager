@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { useAlert } from 'react-alert'
 
-import api from '../utils/api'
+import api from '../utils/demo_api'
 import tasks_reducer from '../reducers/tasks'
 import profile_reducer from '../reducers/profile'
 import Context from '../context/Context'
@@ -10,10 +10,10 @@ import Toolbar from './Toolbar'
 import TaskSection from './TaskSection'
 import Loading from './Loading'
 
-const Dashboard = ({ history }) => {
+const Demo = ({ history }) => {
   const alert = useAlert()
   const [tasks, dispatch] = useReducer(tasks_reducer, [])
-  const [profile, dispatchProfile] = useReducer(profile_reducer, { name: '', email: '', age: 0, })
+  const [profile, dispatchProfile] = useReducer(profile_reducer, { name: '', email: '', age: 0 })
 
   const [isLoading, setIsLoading] = useState(false)
 
@@ -60,4 +60,4 @@ const Dashboard = ({ history }) => {
   )
 }
 
-export default Dashboard
+export default Demo

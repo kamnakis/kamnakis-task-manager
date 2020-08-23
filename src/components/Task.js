@@ -5,10 +5,9 @@ import Context from '../context/Context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 import Loading from './Loading'
-import api from '../utils/api'
 
 const Task = ({ task }) => {
-  const { dispatch } = useContext(Context)
+  const { dispatch, api } = useContext(Context)
   const alert = useAlert()
 
   const [description, setDescription] = useState(task.description)
@@ -68,7 +67,8 @@ const Task = ({ task }) => {
         dispatch({ type: 'REMOVE_TASK', task: res })
         alert.success('Task removed successfully!')
       } catch (error) {
-        alert.show('Something wen wrong!')
+        alert.show('Something went wrong!')
+        setIsLoading(false)
       }
     }
   }
