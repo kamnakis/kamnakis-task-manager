@@ -6,10 +6,9 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 import Context from '../context/Context'
 import Loading from './Loading'
-import api from '../utils/api'
 
 const AddTask = () => {
-  const { dispatch } = useContext(Context)
+  const { dispatch, api } = useContext(Context)
   const [isAdding, setIsAdding] = useState(false)
   const alert = useAlert()
 
