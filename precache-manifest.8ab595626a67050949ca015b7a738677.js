@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ca0fe93ad7f3f9cb6b96962997b13f6",
+    "revision": "c28294a90a9dd954b7302598a82c662c",
     "url": "/kamnakis-task-manager/index.html"
   },
   {
-    "revision": "4574151ce8abfc0d8eb7",
+    "revision": "fafce3629c44a69d2290",
     "url": "/kamnakis-task-manager/static/css/main.c69242f5.chunk.css"
   },
   {
-    "revision": "8ddf4335aef4cefa0615",
-    "url": "/kamnakis-task-manager/static/js/2.04ae3c86.chunk.js"
+    "revision": "43fe65cdfc6e14b83135",
+    "url": "/kamnakis-task-manager/static/js/2.09c4b7c3.chunk.js"
   },
   {
     "revision": "98c92e4a71422a59c3daed74f16a0206",
-    "url": "/kamnakis-task-manager/static/js/2.04ae3c86.chunk.js.LICENSE.txt"
+    "url": "/kamnakis-task-manager/static/js/2.09c4b7c3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4574151ce8abfc0d8eb7",
-    "url": "/kamnakis-task-manager/static/js/main.4994788f.chunk.js"
+    "revision": "fafce3629c44a69d2290",
+    "url": "/kamnakis-task-manager/static/js/main.1fca1645.chunk.js"
   },
   {
     "revision": "6a8afff526b1f0441171",
