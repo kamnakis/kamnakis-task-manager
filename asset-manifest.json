@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/taskManager/static/css/main.c69242f5.chunk.css",
-    "main.js": "/taskManager/static/js/main.148ab043.chunk.js",
-    "main.js.map": "/taskManager/static/js/main.148ab043.chunk.js.map",
-    "runtime-main.js": "/taskManager/static/js/runtime-main.9f6da9d5.js",
-    "runtime-main.js.map": "/taskManager/static/js/runtime-main.9f6da9d5.js.map",
-    "static/js/2.04ae3c86.chunk.js": "/taskManager/static/js/2.04ae3c86.chunk.js",
-    "static/js/2.04ae3c86.chunk.js.map": "/taskManager/static/js/2.04ae3c86.chunk.js.map",
-    "index.html": "/taskManager/index.html",
-    "precache-manifest.329c30268d2a964d86eb72e897a90277.js": "/taskManager/precache-manifest.329c30268d2a964d86eb72e897a90277.js",
-    "service-worker.js": "/taskManager/service-worker.js",
-    "static/css/main.c69242f5.chunk.css.map": "/taskManager/static/css/main.c69242f5.chunk.css.map",
-    "static/js/2.04ae3c86.chunk.js.LICENSE.txt": "/taskManager/static/js/2.04ae3c86.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/taskManager/static/media/logo.7b5c3d2c.svg"
+    "main.css": "/kamnakis-task-manager/static/css/main.c69242f5.chunk.css",
+    "main.js": "/kamnakis-task-manager/static/js/main.4994788f.chunk.js",
+    "main.js.map": "/kamnakis-task-manager/static/js/main.4994788f.chunk.js.map",
+    "runtime-main.js": "/kamnakis-task-manager/static/js/runtime-main.56a9da9b.js",
+    "runtime-main.js.map": "/kamnakis-task-manager/static/js/runtime-main.56a9da9b.js.map",
+    "static/js/2.04ae3c86.chunk.js": "/kamnakis-task-manager/static/js/2.04ae3c86.chunk.js",
+    "static/js/2.04ae3c86.chunk.js.map": "/kamnakis-task-manager/static/js/2.04ae3c86.chunk.js.map",
+    "index.html": "/kamnakis-task-manager/index.html",
+    "precache-manifest.642f26223bb43f4d777c4c882327e289.js": "/kamnakis-task-manager/precache-manifest.642f26223bb43f4d777c4c882327e289.js",
+    "service-worker.js": "/kamnakis-task-manager/service-worker.js",
+    "static/css/main.c69242f5.chunk.css.map": "/kamnakis-task-manager/static/css/main.c69242f5.chunk.css.map",
+    "static/js/2.04ae3c86.chunk.js.LICENSE.txt": "/kamnakis-task-manager/static/js/2.04ae3c86.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/kamnakis-task-manager/static/media/logo.7b5c3d2c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9f6da9d5.js",
+    "static/js/runtime-main.56a9da9b.js",
     "static/js/2.04ae3c86.chunk.js",
     "static/css/main.c69242f5.chunk.css",
-    "static/js/main.148ab043.chunk.js"
+    "static/js/main.4994788f.chunk.js"
   ]
 }
