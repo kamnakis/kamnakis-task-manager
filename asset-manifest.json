@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kamnakis-task-manager/static/css/main.c69242f5.chunk.css",
-    "main.js": "/kamnakis-task-manager/static/js/main.e8315aa5.chunk.js",
-    "main.js.map": "/kamnakis-task-manager/static/js/main.e8315aa5.chunk.js.map",
+    "main.js": "/kamnakis-task-manager/static/js/main.6dac1146.chunk.js",
+    "main.js.map": "/kamnakis-task-manager/static/js/main.6dac1146.chunk.js.map",
     "runtime-main.js": "/kamnakis-task-manager/static/js/runtime-main.56a9da9b.js",
     "runtime-main.js.map": "/kamnakis-task-manager/static/js/runtime-main.56a9da9b.js.map",
     "static/js/2.befd6989.chunk.js": "/kamnakis-task-manager/static/js/2.befd6989.chunk.js",
     "static/js/2.befd6989.chunk.js.map": "/kamnakis-task-manager/static/js/2.befd6989.chunk.js.map",
     "index.html": "/kamnakis-task-manager/index.html",
-    "precache-manifest.2f6e50b0e41d55b3509c56e5ad2cbfbc.js": "/kamnakis-task-manager/precache-manifest.2f6e50b0e41d55b3509c56e5ad2cbfbc.js",
+    "precache-manifest.6d614dde7d7a9c9d6b7d5b4e25c9492d.js": "/kamnakis-task-manager/precache-manifest.6d614dde7d7a9c9d6b7d5b4e25c9492d.js",
     "service-worker.js": "/kamnakis-task-manager/service-worker.js",
     "static/css/main.c69242f5.chunk.css.map": "/kamnakis-task-manager/static/css/main.c69242f5.chunk.css.map",
     "static/js/2.befd6989.chunk.js.LICENSE.txt": "/kamnakis-task-manager/static/js/2.befd6989.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.56a9da9b.js",
     "static/js/2.befd6989.chunk.js",
     "static/css/main.c69242f5.chunk.css",
-    "static/js/main.e8315aa5.chunk.js"
+    "static/js/main.6dac1146.chunk.js"
   ]
 }
